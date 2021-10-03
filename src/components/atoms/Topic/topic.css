@@ -1,0 +1,81 @@
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+.content-content{
+    padding: 75px 0;
+}
+#exam-block{
+    background-color: #fff000;
+    border-radius: 12px;
+    padding: 20px;
+}
+.lesson-block{
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 280px;
+    height: 260px;
+    cursor: pointer;
+    padding: 17px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.test-block::after{
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    background: linear-gradient(#3dc832, #fff000);
+    content: '';
+    z-index: -1;
+    border-radius: 12px;
+}
+.test-block{
+    position: relative;
+    border: 5px solid transparent;
+    border-radius: 12px;
+    background-color: white;
+    background-clip: padding-box;
+}
+.exam-block-a{
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+}
+#exam-block:hover .exam-block-a{
+    color: #3dc832;
+}
+.test-block-theme{
+    display: inline;
+    background-size: 19px auto;
+    background-position: right;
+    height: 19px;
+    background-repeat: no-repeat;
+    padding: 6px 24px 0 0;
+}
+.theme-name{
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+.theme-p{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.theme-p a{
+    margin-top: 5px;
+    color: #3dc832;
+    text-decoration: none;
+    border-bottom: solid 1px rgba(61, 200, 50, 0.3);
+}
+.lesson-block:hover{
+    color: #3dc832;
+    cursor: pointer;
+}
+.theme-p a:hover{
+    color: #64e632;
+    border-bottom: solid 1px rgba(100, 230, 50, 0.3);
+}
