@@ -5,6 +5,7 @@ import Topic from '../../molecules/Topic/topic.jsx'
 import './DefaultPage.css'
 import TestForm from '../../organizms/TestForm/TestForm.jsx';
 import Lect1 from '../../molecules/Lections/1/Lect1.jsx';
+import SelfWork1 from '../../molecules/SelfWorks/1/SelfWork1.jsx';
 
 import Exam from '../../atoms/Exam/Exam.jsx';
 // import TestForm from '../../organizms/TestForm/TestForm.jsx'
@@ -16,10 +17,12 @@ const DefaultPage = (props) => {
     const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
     const [lec2, setLection2] = useState(JSON.parse(localStorage.getItem('lection2'))|| false)
     const [lec3, setLection3] = useState(JSON.parse(localStorage.getItem('lection3'))|| false)
+
+    const [swork, setWork1] = useState(JSON.parse(localStorage.getItem('selfWork1'))|| false)
     
     const TOPICS = [
-    { number: 1 , name: 'Бюджет и налоговая система РФ', lec:'lection1',  lection: lection1},
-    { number: 2 , name: 'Права и обязанности налогоплательщиков', lec:'lection2',  lection: lection2},
+    { number: 1 , name: 'Бюджет и налоговая система РФ', lec:'lection1',  lection: lection1, swork:"selfWork1", selfWork: selfWork1},
+    { number: 2 , name: 'Права и обязанности налогоплательщиков', lec:'lection2',  lection: lection2, swork:"selfWork1", selfWork: selfWork1},
     { number: 3 , name: 'Налоговый контроль в РФ', lec:'lection3',  lection: lection3},
     // { number: 4 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 5 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
@@ -53,13 +56,22 @@ const DefaultPage = (props) => {
         setLection3(true)
     }
 
+    function selfWork1() {
+        localStorage.clear()
+        localStorage.setItem('selfWork1', 'true' )
+        setWork1(true)
+    }
+
     function goToCourses() {
         localStorage.clear()
         setLection1(false)
     }
 
-    let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.lec))==true)
-    let compon
+    let compon = null
+
+// Lections
+    if (compon === null){
+        let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.lec))==true)
     if (needLec.length !== 0){
         if (needLec[0].lec === 'lection1'){
             compon = <Lect1/>
@@ -71,8 +83,27 @@ const DefaultPage = (props) => {
         //     compon = <Lect3/>
         // }
     }
+}
+
+// SelfWorks
+if (compon === null){
+    let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.swork))==true)
+if (needLec.length !== 0){
+    console.log(needLec[0].swork === 'selfWork1')
+    if (needLec[0].swork === 'selfWork1'){
+        compon = <SelfWork1/>
+    }
+    // else if (needLec[0].lec === 'lection2'){
+    //     compon = <Lect2/>
+    // }
+    // else if (needLec[0].lec === 'lection3'){
+    //     compon = <Lect3/>
+    // }
+}
+}
+
     return (
-        JSON.parse(localStorage.getItem('lection1')) == true ?
+        JSON.parse(localStorage.getItem('selfWork1')) == true ?
         <div>
         <Head name = {props.name}
         courses = {goToCourses}
