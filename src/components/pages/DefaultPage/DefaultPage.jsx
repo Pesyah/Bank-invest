@@ -9,6 +9,7 @@ import Exam from '../../atoms/Exam/Exam.jsx';
 // import TestForm from '../../organizms/TestForm/TestForm.jsx'
 
 const DefaultPage = (props) => {
+    
     const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
 
     console.log(lec1)
@@ -38,8 +39,12 @@ const DefaultPage = (props) => {
 
     return (
         JSON.parse(localStorage.getItem('lection1'))== true ?
+        <div>
+        <Head name = {props.name}
+        onClick={props.onClick}/>
         <TestForm></TestForm>
-        
+        <Footer/>
+        </div>
         :  
         <div>
         <Head name = {props.name}
@@ -58,7 +63,6 @@ const DefaultPage = (props) => {
                 )
             })}
             </div>
-            <TestForm></TestForm>
         </div>
           <Footer/>
         </div>
