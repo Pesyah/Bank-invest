@@ -11,15 +11,12 @@ const head = (props) => {
             <nav id="header-navbar">
                 <button className="navbar-btn"><a href={props.proj}>О проекте</a></button>
                 <button className="navbar-btn"><a href={props.test}>Тест</a></button>
-                <button className="navbar-btn"><a href={props.smartMoney}>«Умная стипендия»</a></button>
-                <button className="navbar-btn"><a href={props.courses}>Курсы</a></button>
-                <button className="navbar-btn"><a href={props.studyMaterial}>Учебные материалы</a></button>
-                <button className="navbar-btn"><a href={props.reviews}>Отзывы</a></button>
-            </nav>
-            <button id="account">
-                <a className="account-enter">Войти</a>
-            </button>
-        </header>
+                <button className="navbar-btn"><a href={props.courses}>Курс "Налоги"</a></button>
+</nav>
+<button id="account">
+    <a className="account-enter">Войти</a>
+</button>
+</header>
     );
 };
 
