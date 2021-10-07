@@ -47,7 +47,8 @@ const TestForm = () => {
                         <a href="#" className="page-a">Тест</a>
                     </div>
                     {/* Общий блок текста лекции */}
-                        <div id={lection} className="test-lection-content-text">
+                        <div className="test-lection-content-text">
+                        {/*  id={lection} */}
                             {/* Один абзац */}
                             <p>Бюджет — это форма образования и расходования фонда денежных средств, предназначенная для  финансирования задач и  функций местного самоуправления.
     С помощью государственного бюджета власти государства получают финансовые ресурсы:
@@ -106,7 +107,8 @@ const TestForm = () => {
                             </ul>
                             <p>Налогоплательщиками и плательщиками сборов признаются организации и физические лица, на которых в соответствии с НК РФ возложена обязанность уплачивать соответственно налоги и (или) сборы.</p>
                         </div>
-                        <div id={independentWork} className="test-lection-content-text">
+                        <div className="test-lection-content-text">
+                            {/*  id={independentWork} */}
                             <ul className="num-ul">
                                 <p>Самостоятельно изучить:</p>
                                 <li>Финансы государства: понятие, сущность.</li>
@@ -126,7 +128,8 @@ const TestForm = () => {
                                 <li>Порядок исчисления и уплаты налога.</li>
                             </ul>
                         </div>
-                        <div id={test} className="test-lection-content-text">
+                        <div className="test-lection-content-text">
+                        {/* id={test} */}
                             <div className="test-lection-block">
                                 <p className="test-lection-block-p">Как называются налоги и сборы, устанавливаемые НК и обязательные к уплате на всей территории РФ?</p>
                                 <ul className="test-lection-answers" radio>

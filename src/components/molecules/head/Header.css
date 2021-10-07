@@ -1,10 +1,10 @@
 #header{
-    border-bottom: 1px solid #d6d6d6;
     min-width: 1100px;
     height: 100px;
     display: flex;
     background: white;
-    border-bottom: 0.1px solid #d6d6d6;
+    background: linear-gradient(#3dc832, #fff000);
+    content: '';
 }
 #logo{
     flex: 2;
@@ -50,18 +50,23 @@
     justify-content: center;
     border: 0px;
     height: 100%;
-    width: 16.666666%;
+    width: 33.3333333333%;
     float: left;
     background: transparent;
     cursor: pointer;
-    border-left: 0.1px solid #d6d6d6;
+}
+.navbar-btn:hover{
+    box-shadow: 0px -15px 40px 2px black;
 }
 .navbar-btn a{
     color: black;
     text-decoration: none;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    text-transform: uppercase;
+    font-family: system-ui;
+    font-weight: 500;
+    font-size: 20px;
 }
 .navbar-btn:hover .navbar-btn a{
     border-bottom: 3px solid black;
@@ -77,7 +82,10 @@
     text-align: center;
     border: 0px;
     cursor: pointer;
-    border-left: 0.1px solid #d6d6d6;
+    text-transform: uppercase;
+    font-family: system-ui;
+    font-weight: 500;
+    font-size: 24px;
 }
 #account:hover {
     border: 2px solid green
