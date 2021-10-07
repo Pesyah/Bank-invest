@@ -6,7 +6,8 @@ import DefaultPage from './components/pages/DefaultPage/DefaultPage.jsx';
 import users from './Data/Users/Users';
 
 function App() {
-  const [isAuth, setAuth] = useState(JSON.parse(localStorage.getItem('Auth'))||false)
+
+  const [isAuth, setAuth] = useState(JSON.parse(localStorage.getItem('Auth')) || false)
   const [btnName, setBtnName] = useState('Войти')
   
   const [login, setLogin] =useState('')
