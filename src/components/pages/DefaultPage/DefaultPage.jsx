@@ -15,13 +15,12 @@ const DefaultPage = (props) => {
 
     const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
     const [lec2, setLection2] = useState(JSON.parse(localStorage.getItem('lection2'))|| false)
-
-    console.log(lec1)
+    const [lec3, setLection3] = useState(JSON.parse(localStorage.getItem('lection3'))|| false)
     
     const TOPICS = [
-    { number: 1 , name: 'Бюджет и налоговая система РФ',  lection: lection1},
-    { number: 2 , name: 'Права и обязанности налогоплательщиков', lection: lection2},
-    // { number: 3 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
+    { number: 1 , name: 'Бюджет и налоговая система РФ', lec:'lection1',  lection: lection1},
+    { number: 2 , name: 'Права и обязанности налогоплательщиков', lec:'lection2',  lection: lection2},
+    { number: 3 , name: 'Налоговый контроль в РФ', lec:'lection3',  lection: lection3},
     // { number: 4 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 5 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 6 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
@@ -37,28 +36,48 @@ const DefaultPage = (props) => {
 
 
     function lection1() {
+        localStorage.clear()
         localStorage.setItem('lection1', 'true' )
         setLection1(true)
     }
 
     function lection2() {
+        localStorage.clear()
         localStorage.setItem('lection2', 'true' )
         setLection2(true)
     }
 
+    function lection3() {
+        localStorage.clear()
+        localStorage.setItem('lection2', 'true' )
+        setLection3(true)
+    }
+
     function goToCourses() {
-        console.log(1)
-        localStorage.setItem('lection1', 'false')
+        localStorage.clear()
         setLection1(false)
     }
 
-
+    let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.lec))==true)
+    let compon
+    if (needLec.length !== 0){
+        if (needLec[0].lec === 'lection1'){
+            compon = <Lect1/>
+        }
+        // else if (needLec[0].lec === 'lection2'){
+        //     compon = <Lect2/>
+        // }
+        // else if (needLec[0].lec === 'lection3'){
+        //     compon = <Lect3/>
+        // }
+    }
     return (
-        JSON.parse(localStorage.getItem('lection1'))== true ?
+        JSON.parse(localStorage.getItem('lection1')) == true ?
         <div>
         <Head name = {props.name}
         courses = {goToCourses}
         onClick={props.onClick}/>
+        {compon}
         <Footer/>
         </div>
         :  

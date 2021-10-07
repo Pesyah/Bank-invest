@@ -33,18 +33,16 @@ function App() {
   }
   return (
 
-<SelfWork5/>
-
-    // isAuth ? 
-    //   <RegForm 
-    //   login={(e)=> setLogin(e.target.value)}
-    //   password={(e)=> setPassword(e.target.value)}
-    //   name='отправить' 
-    //   onClick={submit}/> 
-    // :
-    //   <DefaultPage 
-    //   name = {btnName}
-    //   onClick={registration}/>
+    isAuth ? 
+      <RegForm 
+      login={(e)=> setLogin(e.target.value)}
+      password={(e)=> setPassword(e.target.value)}
+      name='отправить' 
+      onClick={submit}/> 
+    :
+      <DefaultPage 
+      name = {btnName}
+      onClick={registration}/>
   );
 }
 
