@@ -11,7 +11,7 @@ const head = (props) => {
             <nav id="header-navbar">
                 <button className="navbar-btn"><a href={props.proj}>О проекте</a></button>
                 <button className="navbar-btn"><a href={props.test}>Тест</a></button>
-                <button className="navbar-btn"><a href={props.courses}>Курс "Налоги"</a></button>
+                <button className="navbar-btn" onClick={props.courses}>Курс "Налоги"</button>
 </nav>
 <button id="account" onClick={props.onClick}>
    {props.name}
