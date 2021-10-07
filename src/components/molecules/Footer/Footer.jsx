@@ -4,13 +4,8 @@ import './footer.css'
 const footer = () => {
     return (
         <footer id="footer">
-        <div class="footer-banner">
-            <p>Зарегистрировались 51791 человек,
-                <br/>
-                из них 22904 получили сертификаты</p>
-        </div>
         <div class="footer-bottom">
-            <div class="copyright">
+            {/* <div class="copyright">
                 <p class="copyright-p">© 1997–2021,
                 <br/>
                 <a href="#">Центр-инвест</a>
@@ -30,10 +25,13 @@ const footer = () => {
                 <p class="contact-p">8 (863) 2-000-000<a href="mailto:dobro@centrinvest.ru"><br/>
                     dobro@centrinvest.ru</a></p>
                 
-            </div>
+            </div> */}
+            <div style={{ position: "relative", marginRight: "auto", marginLeft: "auto"}}>Ступени успеха</div> 
         </div>
     </footer>
     );
 };
 
 export default footer;
+
+// убрать отзывы, учебные материалы, курсы = Курс "Налоги", умная стипендия, 

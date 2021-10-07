@@ -1,13 +1,13 @@
 import React from 'react';
-import Head from '../../molekules/head/Head.jsx';
-import Footer from '../../molekules/Footer/Footer.jsx'
+import Head from '../../molecules/head/Head.jsx';
+import Footer from '../../molecules/Footer/Footer.jsx'
 import Topic from '../../atoms/Topic/topic.jsx'
 import './Defolt.css'
 
-const Defolt = () => {
+const Defolt = (props) => {
     return (
         <div>
-        <Head proj="" test="" smartMoney="" courses="" studyMaterial="" reviews=""/>
+        <Head/>
 
         <Topic/>
 
