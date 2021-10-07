@@ -8,11 +8,7 @@ import TestForm from '../../organizms/TestForm/TestForm.jsx';
 const Defolt = (props) => {
     return (
         <div>
-        <Head/>
-
-        <Topic/>
-
-        <Footer/>
+            
         </div>
     );
 };
