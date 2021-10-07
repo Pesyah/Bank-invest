@@ -13,8 +13,8 @@ const head = (props) => {
                 <button className="navbar-btn"><a href={props.test}>Тест</a></button>
                 <button className="navbar-btn"><a href={props.courses}>Курс "Налоги"</a></button>
 </nav>
-<button id="account">
-    <a className="account-enter">Войти</a>
+<button id="account" onClick={props.onClick}>
+   {props.name}
 </button>
 </header>
     );
