@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SelfWork = () => {
+const SelfWork1 = () => {
     return (
         <div className="test-lection-content-text">
                             {/*  id={independentWork} */}
@@ -27,4 +27,4 @@ const SelfWork = () => {
     );
 };
 
-export default SelfWork;
+export default SelfWork1;

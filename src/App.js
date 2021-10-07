@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import SelfWork5 from './components/molecules/SelfWorks/1/SelfWork5';
 import RegForm from './components/organizms//RegForm/RegForm'
 import DefaultPage from './components/pages/DefaultPage/DefaultPage.jsx';
 import users from './Data/Users/Users';
@@ -32,16 +33,18 @@ function App() {
   }
   return (
 
-    isAuth ? 
-      <RegForm 
-      login={(e)=> setLogin(e.target.value)}
-      password={(e)=> setPassword(e.target.value)}
-      name='отправить' 
-      onClick={submit}/> 
-    :
-      <DefaultPage 
-      name = {btnName}
-      onClick={registration}/>
+<SelfWork5/>
+
+    // isAuth ? 
+    //   <RegForm 
+    //   login={(e)=> setLogin(e.target.value)}
+    //   password={(e)=> setPassword(e.target.value)}
+    //   name='отправить' 
+    //   onClick={submit}/> 
+    // :
+    //   <DefaultPage 
+    //   name = {btnName}
+    //   onClick={registration}/>
   );
 }
 
