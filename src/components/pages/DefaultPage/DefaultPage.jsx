@@ -4,19 +4,23 @@ import Footer from '../../molecules/Footer/Footer.jsx'
 import Topic from '../../molecules/Topic/topic.jsx'
 import './DefaultPage.css'
 import TestForm from '../../organizms/TestForm/TestForm.jsx';
+import Lect1 from '../../molecules/Lections/1/Lect1.jsx';
 
 import Exam from '../../atoms/Exam/Exam.jsx';
 // import TestForm from '../../organizms/TestForm/TestForm.jsx'
 
 const DefaultPage = (props) => {
 
+    let drawLec = false
+
     const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
+    const [lec2, setLection2] = useState(JSON.parse(localStorage.getItem('lection2'))|| false)
 
     console.log(lec1)
     
     const TOPICS = [
     { number: 1 , name: 'Бюджет и налоговая система РФ',  lection: lection1},
-    { number: 2 , name: 'Права и обязанности налогоплательщиков',},
+    { number: 2 , name: 'Права и обязанности налогоплательщиков', lection: lection2},
     // { number: 3 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 4 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 5 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
@@ -37,11 +41,17 @@ const DefaultPage = (props) => {
         setLection1(true)
     }
 
+    function lection2() {
+        localStorage.setItem('lection2', 'true' )
+        setLection2(true)
+    }
+
     function goToCourses() {
         console.log(1)
         localStorage.setItem('lection1', 'false')
         setLection1(false)
     }
+
 
     return (
         JSON.parse(localStorage.getItem('lection1'))== true ?
@@ -49,7 +59,6 @@ const DefaultPage = (props) => {
         <Head name = {props.name}
         courses = {goToCourses}
         onClick={props.onClick}/>
-        <TestForm></TestForm>
         <Footer/>
         </div>
         :  
