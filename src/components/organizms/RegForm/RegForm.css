@@ -1,0 +1,28 @@
+.post {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 180px;
+    background-color: rgb(9, 121, 248);
+    
+}
+
+input {
+    border: 2px solid green;
+    font-size: 25px;
+    float: left;
+}
+
+.btn1 {
+    position: relative;
+    top: -25px;
+    font-weight: 800;
+    background-color: green;
+    width: 100px;
+    height: 50px;
+    float: left;
+}

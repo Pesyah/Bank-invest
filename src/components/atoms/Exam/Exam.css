@@ -1,0 +1,26 @@
+#exam-block{
+    background-color: #fff000;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.lesson-block{
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 280px;
+    height: 260px;
+    cursor: pointer;
+    padding: 17px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.exam-block-a{
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+}
+#exam-block:hover .exam-block-a{
+    color: #3dc832;
+}
