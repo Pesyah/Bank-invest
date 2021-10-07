@@ -9,11 +9,12 @@ import TestForm from '../../organizms/TestForm/TestForm.jsx';
 
 
 const DefaultPage = (props) => {
-    const [lection11, setLection11] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
-    console.log(lection11)
+    const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
+
+    console.log(lec1)
     
     const TOPICS = [
-    { number: 1 , name: 'Бюджет и налоговая система РФ',  lection: lection1},
+    { number: 1 , name: 'Бюджет и налоговая система РФ',  lection: lec1},
     { number: 2 , name: 'Права и обязанности налогоплательщиков',},
     // { number: 3 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 4 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
@@ -32,7 +33,7 @@ const DefaultPage = (props) => {
 
     function lection1() {
         localStorage.setItem('lection1', 'true' )
-        setLection11(true)
+        setLection1(true)
     }
 
     return (
