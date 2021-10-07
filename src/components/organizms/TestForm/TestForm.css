@@ -6,12 +6,13 @@ h1, h2, h3, h4, h5, h6, p, a, li, span{
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 60%;
+  width: 75%;
   padding: 25px 30px 60px 30px;
   border: 15px solid transparent;
   border-radius: 30px;
   background-color: white;
   background-clip: padding-box;
+  text-align: left;
 }
 .test-lection::after{
   position: absolute;
@@ -154,4 +155,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, span{
 }
 .test-lection-content-text p.answers-num{
   font-size: 14px;
+}
+.tstlct{
+  text-align: center;
 }

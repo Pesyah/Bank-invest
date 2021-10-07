@@ -3,10 +3,10 @@ import Head from '../../molecules/head/Head.jsx';
 import Footer from '../../molecules/Footer/Footer.jsx'
 import Topic from '../../molecules/Topic/topic.jsx'
 import './DefaultPage.css'
-
-import Exam from '../../atoms/Exam/Exam.jsx';
 import TestForm from '../../organizms/TestForm/TestForm.jsx';
 
+import Exam from '../../atoms/Exam/Exam.jsx';
+// import TestForm from '../../organizms/TestForm/TestForm.jsx'
 
 const DefaultPage = (props) => {
     const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
@@ -58,6 +58,7 @@ const DefaultPage = (props) => {
                 )
             })}
             </div>
+            <TestForm></TestForm>
         </div>
           <Footer/>
         </div>
