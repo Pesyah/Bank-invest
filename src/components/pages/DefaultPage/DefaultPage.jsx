@@ -14,7 +14,7 @@ const DefaultPage = (props) => {
     
     const TOPICS = [
     { number: 1 , name: 'Бюджет и налоговая система РФ',  lection: lection1},
-    // { number: 2 , name: 'Права и обязанности налогоплательщиков',lection: lection1, selfWork:selfWork1, test: test1},
+    { number: 2 , name: 'Права и обязанности налогоплательщиков',},
     // { number: 3 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 4 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 5 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
@@ -43,17 +43,21 @@ const DefaultPage = (props) => {
         <div>
         <Head name = {props.name}
         onClick={props.onClick}/>
-        <Exam/>
-        { TOPICS.map((topic) => {
-            return(
-                <Topic 
-                lection = {topic.lection}
-                selfWork= {topic.selfWork}
-                test = {topic.test}
-                number={topic.number} 
-                name={topic.name}/>
-            )
-        })}
+        <div className="container">
+            <div className="content-content">
+            <Exam/>
+            { TOPICS.map((topic) => {
+                return(
+                    <Topic 
+                    lection = {topic.lection}
+                    selfWork= {topic.selfWork}
+                    test = {topic.test}
+                    number={topic.number} 
+                    name={topic.name}/>
+                )
+            })}
+            </div>
+        </div>
           <Footer/>
         </div>
            
