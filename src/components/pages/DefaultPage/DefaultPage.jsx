@@ -12,7 +12,10 @@ import SelfWork3 from '../../molecules/SelfWorks/1/SelfWork3.jsx';
 import Exam from '../../atoms/Exam/Exam.jsx';
 import Lect2 from '../../molecules/Lections/1/Lect2.jsx';
 import Lect3 from '../../molecules/Lections/1/Lect3.jsx'
-// import TestForm from '../../organizms/TestForm/TestForm.jsx'
+
+import Test1 from '../../molecules/Tests/1/Test1.jsx';
+import Test2 from '../../molecules/Tests/1/Test2.jsx';
+import Test3 from '../../molecules/Tests/1/Test3.jsx';
 
 const DefaultPage = (props) => {
 
@@ -32,8 +35,8 @@ const DefaultPage = (props) => {
 
     const TOPICS = [
     { number: 1 , name: 'Бюджет и налоговая система РФ', lec:'lection1',  lection: lection1, swork:"selfWork1", selfWork: selfWork1, ts:'test1', test: myTest1 },
-    { number: 2 , name: 'Права и обязанности налогоплательщиков', lec:'lection2',  lection: lection2, swork:"selfWork2", selfWork: selfWork2},
-    { number: 3 , name: 'Налоговый контроль в РФ', lec:'lection3',  lection: lection3, swork:"selfWork3", selfWork: selfWork3},
+    { number: 2 , name: 'Права и обязанности налогоплательщиков', lec:'lection2',  lection: lection2, swork:"selfWork2", selfWork: selfWork2, ts:'test2', test: myTest2},
+    { number: 3 , name: 'Налоговый контроль в РФ', lec:'lection3',  lection: lection3, swork:"selfWork3", selfWork: selfWork3, ts:'test3', test: myTest3},
     // { number: 4 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 5 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
     // { number: 6 , name: 'Налоговый контроль в РФ',lection: lection1, selfWork:selfWork1, test: test1},
@@ -86,20 +89,20 @@ const DefaultPage = (props) => {
 
     function myTest1() {
         localStorage.clear()
-        localStorage.setItem('selfWork3', 'true' )
-        setWork3(true)
+        localStorage.setItem('test1', 'true' )
+        setTest1(true)
     }
 
     function myTest2() {
         localStorage.clear()
-        localStorage.setItem('selfWork3', 'true' )
-        setWork3(true)
+        localStorage.setItem('test2', 'true' )
+        setTest2(true)
     }
 
     function myTest3() {
         localStorage.clear()
-        localStorage.setItem('selfWork3', 'true' )
-        setWork3(true)
+        localStorage.setItem('test3', 'true' )
+        setTest3(true)
     }
 
 
@@ -111,6 +114,9 @@ const DefaultPage = (props) => {
         setWork1(false)
         setWork2(false)
         setWork3(false)
+        setTest1(false)
+        setTest2(false)
+        setTest3(false)
     }
 
     let compon = null
@@ -130,7 +136,7 @@ const DefaultPage = (props) => {
         }
     }
 }
-console.log(compon)
+
 // SelfWorks
 if (compon === null){
     let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.swork))==true)
@@ -146,7 +152,23 @@ if (needLec.length !== 0){
     }
 }
 }
-console.log(compon)
+
+//  TESTS
+if (compon === null){
+    let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.ts))==true)
+if (needLec.length !== 0){
+    if (needLec[0].ts === 'test1'){
+        compon = <Test1/>
+    }
+    else if (needLec[0].ts === 'test2'){
+        compon = <Test2/>
+    }
+    else if (needLec[0].ts === 'test3'){
+        compon = <Test3/>
+    }
+}
+}
+
 
     return (
         compon !== null ?
