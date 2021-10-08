@@ -16,6 +16,7 @@ import Lect3 from '../../molecules/Lections/1/Lect3.jsx'
 import Test1 from '../../molecules/Tests/1/Test1.jsx';
 import Test2 from '../../molecules/Tests/1/Test2.jsx';
 import Test3 from '../../molecules/Tests/1/Test3.jsx';
+import Shop from '../Shop/Shop.jsx';
 
 const DefaultPage = (props) => {
 
@@ -113,9 +114,12 @@ const DefaultPage = (props) => {
         setTest3(true)
     }
 
+   
 
     function goToCourses() {
+     
         clearLocal()
+        setQ(false)
         setLection1(false)
         setLection2(false)
         setLection3(false)
@@ -142,6 +146,7 @@ const DefaultPage = (props) => {
         else if (needLec[0].lec === 'lection3'){
             compon = <Lect3 name={needLec[0].name} number={needLec[0].number} next={selfWork2}/>
         }
+        
     }
 }
 
@@ -177,8 +182,15 @@ if (needLec.length !== 0){
 }
 }
 
+const [q, setQ] = useState(false)
+function goToShop(compon){
+    clearLocal()
+    setQ(true)
+}
 
     return (
+
+        q? <Shop courses = {goToCourses} /> :
         compon !== null ?
         <div>
         <Head name = {props.name} courses = {goToCourses} onClick={props.onClick}/>
@@ -190,6 +202,7 @@ if (needLec.length !== 0){
         :  
         <div>
         <Head name = {props.name}
+        shop = {(compon)=>goToShop(compon)}
         courses = {goToCourses}
         onClick={props.onClick}/>
         <div className="container">

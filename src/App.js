@@ -47,10 +47,10 @@ function App() {
     <>
     <button onClick={()=> setModalActive(true)}>ok</button>
     <div>на вашем счету {money} монеток </div>
-      {/* <DefaultPage 
+      <DefaultPage 
       name = {btnName}
-      onClick={registration}/> */}
-      <Shop money={money}/>
+      onClick={registration}/>
+      {/* <Shop money={money}/> */}
       <ModalWindow 
       title='Поздравляем!'
       subtitle='Вы заработали +1 монетку'

@@ -9,9 +9,9 @@ const head = (props) => {
                 <h3 class="logo-zag">Интернет-портал<br/>«Предпринимательский<br/>всеобуч»</h3>
             </div>
             <nav id="header-navbar">
-                <button className="navbar-btn"><a href={props.proj}>О проекте</a></button>
-                <button className="navbar-btn"><a href={props.test}>Тест</a></button>
-                <button className="navbar-btn" onClick={props.courses}><a href="#">Курс "Налоги"</a></button>
+                <button className="navbar-btn"><a>О проекте</a></button>
+                <button className="navbar-btn" onClick={props.shop}><a>Магазин</a></button>
+                <button className="navbar-btn" onClick={props.courses}><a>Курс "Налоги"</a></button>
 </nav>
 <button id="account" onClick={props.onClick}><a href="#">
    {props.name}

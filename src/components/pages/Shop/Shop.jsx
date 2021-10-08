@@ -64,7 +64,11 @@ const Shop = (props) => {
     return (
         <div>
            {mod()}
-           <Head name = 'Выйти' onClick={props.onClick}/>
+           <Head 
+            name = {props.name} courses = {props.courses}
+           
+           
+           name = 'Выйти' onClick={props.onClick}/>
             <div className="shop">
                 <div >
                     <div className='modal__content' onClick={e=>e.stopPropagation()}>
