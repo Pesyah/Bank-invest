@@ -7,9 +7,9 @@ const Topic = (props) => {
         <div className="lesson-block test-block">
             <p href="#" className="test-block-theme">Тема №{props.number}</p>
             <h4 className="theme-name">{props.name}</h4>
-            <p className="theme-p"><button  onClick={ props.lection}>Лекция</button></p>
-            <p className="theme-p"><button  onClick={ props.selfWork}>Самостоятельная работа</button></p>
-            <p className="theme-p"><button  onClick={ props.test}>Тест</button></p>
+            <p className="theme-p"><a onClick={ props.lection}>Лекция</a></p>
+            <p className="theme-p"><a onClick={ props.selfWork}>Самостоятельная работа</a></p>
+            <p className="theme-p"><a onClick={ props.test}>Тест</a></p>
         </div>
     );
 };
