@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6, p, a, li, span{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 90px 0;
 }
 .test-num{
   margin: 0px;
