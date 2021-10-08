@@ -21,7 +21,7 @@ function App() {
   function registration(){
     setAuth(true)
     setBtnName('Войти')
-    localStorage.setItem('Auth', JSON.stringify(isAuth))
+    localStorage.setItem('Auth', JSON.stringify('true'))
    
   }
 
@@ -31,13 +31,14 @@ function App() {
       if(i.login===login&&i.password===password){
         setAuth(false)
         setBtnName('Выйти')
-        localStorage.setItem('Auth', JSON.stringify('false'))
+        console.log(1)
+        localStorage.setItem('Auth', JSON.stringify(false))
       }
     }
   }
   return (
 
-    isAuth ? 
+    JSON.parse(localStorage.getItem('Auth')) ? 
       <RegForm 
       login={(e)=> setLogin(e.target.value)}
       password={(e)=> setPassword(e.target.value)}
