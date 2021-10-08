@@ -7,3 +7,35 @@ a, p, h1, h2, h3, h4, h5, h6{
 body{
     margin: 0px;    
 }
+.count{
+    background: #fff000;
+}
+.count-p{
+    display: inline-block;
+    color: black;
+    font-family: monospace;
+    font-size: 45px;
+    margin: 20px 20px;
+}
+.count-p span{
+    font-family: monospace;
+}
+.money{
+    background: url(./img/coin.gif);
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    background-size: 360%;
+    background-position: 50% 50%;
+    border-radius: 100%;
+    float: left;
+}
+.count button{
+    padding: 10px 40px;
+    font-size: 25px;
+    text-transform: uppercase;
+    background: #3dc832;
+    border: 0px;
+    border-radius: 15px;
+    color: white;
+}

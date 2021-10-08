@@ -46,8 +46,10 @@ function App() {
       onClick={submit}/> 
     :
     <>
-    <button onClick={()=> setModalActive(true)}>ok</button>
-    <div>на вашем счету {money} монеток </div>
+    <div className="count">
+      <p className="count-p"><div className="money"></div><span>{money}</span></p>
+      <button onClick={()=> setModalActive(true)}>ok</button>
+    </div>
       <DefaultPage 
       name = {btnName}
       onClick={registration}/>
