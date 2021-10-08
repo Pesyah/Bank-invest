@@ -49,65 +49,75 @@ const DefaultPage = (props) => {
 ]
 
 
-
+    function clearLocal() {
+        localStorage.setItem('lection1', 'false' )
+        localStorage.setItem('lection2', 'false' )
+        localStorage.setItem('lection3', 'false' )
+        localStorage.setItem('selfWork1', 'false' )
+        localStorage.setItem('selfWork2', 'false' )
+        localStorage.setItem('selfWork3', 'false' )
+        localStorage.setItem('test1', 'false' )
+        localStorage.setItem('test2', 'false' )
+        localStorage.setItem('test3', 'false' )
+    }
 
     function lection1() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('lection1', 'true' )
         setLection1(true)
     }
 
     function lection2() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('lection2', 'true' )
         setLection2(true)
     }
 
     function lection3() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('lection3', 'true' )
         setLection3(true)
     }
 
     function selfWork1() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('selfWork1', 'true' )
         setWork1(true)
     }
     
     function selfWork2() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('selfWork3', 'true' )
         setWork2(true)
     }
     
     function selfWork3() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('selfWork3', 'true' )
         setWork3(true)
     }
 
     function myTest1() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('test1', 'true' )
         setTest1(true)
     }
 
     function myTest2() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('test2', 'true' )
         setTest2(true)
     }
 
     function myTest3() {
-        localStorage.clear()
+        clearLocal()
         localStorage.setItem('test3', 'true' )
         setTest3(true)
     }
 
 
     function goToCourses() {
-        localStorage.clear()
+        clearLocal()
         setLection1(false)
         setLection2(false)
         setLection3(false)
