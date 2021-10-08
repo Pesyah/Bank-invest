@@ -113,7 +113,7 @@ const Lect2 = (props) => {
                             <p>В случае неуплаты налогов в установленный срок налоговые органы запускают механизм взыскания выявленной задолженности.</p>                     
                         </div>
                         <div className="test-lection-btn">
-                            <button>Продолжить</button>
+                        <button onClick={props.next}>Продолжить</button>
                         </div>
                 </div>
             </div>

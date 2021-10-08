@@ -19,8 +19,6 @@ import Test3 from '../../molecules/Tests/1/Test3.jsx';
 
 const DefaultPage = (props) => {
 
-    let drawLec = false
-
     const [lec1, setLection1] = useState(JSON.parse(localStorage.getItem('lection1'))|| false)
     const [lec2, setLection2] = useState(JSON.parse(localStorage.getItem('lection2'))|| false)
     const [lec3, setLection3] = useState(JSON.parse(localStorage.getItem('lection3'))|| false)
@@ -136,13 +134,13 @@ const DefaultPage = (props) => {
         let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.lec))==true)
     if (needLec.length !== 0){
         if (needLec[0].lec === 'lection1'){
-            compon = <Lect1 name={needLec[0].name} number={needLec[0].number}/>
+            compon = <Lect1 name={needLec[0].name} number={needLec[0].number}  next={selfWork1}/>
         }
         else if (needLec[0].lec === 'lection2'){
-            compon = <Lect2 name={needLec[0].name} number={needLec[0].number}/>
+            compon = <Lect2 name={needLec[0].name} number={needLec[0].number} next={selfWork2}/>
         }
         else if (needLec[0].lec === 'lection3'){
-            compon = <Lect3 name={needLec[0].name} number={needLec[0].number}/>
+            compon = <Lect3 name={needLec[0].name} number={needLec[0].number} next={selfWork2}/>
         }
     }
 }
@@ -152,13 +150,13 @@ if (compon === null){
     let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.swork))==true)
 if (needLec.length !== 0){
     if (needLec[0].swork === 'selfWork1'){
-        compon = <SelfWork1 name={needLec[0].name} number={needLec[0].number}/>
+        compon = <SelfWork1 name={needLec[0].name} number={needLec[0].number} next={myTest1}/>
     }
     else if (needLec[0].swork === 'selfWork2'){
-        compon = <SelfWork2 name={needLec[0].name} number={needLec[0].number}/>
+        compon = <SelfWork2 name={needLec[0].name} number={needLec[0].number} next={myTest2}/>
     }
     else if (needLec[0].swork === 'selfWork3'){
-        compon = <SelfWork3 name={needLec[0].name} number={needLec[0].number}/>
+        compon = <SelfWork3 name={needLec[0].name} number={needLec[0].number} next={myTest3}/>
     }
 }
 }
@@ -168,13 +166,13 @@ if (compon === null){
     let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.ts))==true)
 if (needLec.length !== 0){
     if (needLec[0].ts === 'test1'){
-        compon = <Test1 name={needLec[0].name} number={needLec[0].number}/>
+        compon = <Test1 name={needLec[0].name} number={needLec[0].number} next={goToCourses}/>
     }
     else if (needLec[0].ts === 'test2'){
-        compon = <Test2 name={needLec[0].name} number={needLec[0].number}/>
+        compon = <Test2 name={needLec[0].name} number={needLec[0].number} next={goToCourses}/>
     }
     else if (needLec[0].ts === 'test3'){
-        compon = <Test3 name={needLec[0].name} number={needLec[0].number}/>
+        compon = <Test3 name={needLec[0].name} number={needLec[0].number} next={goToCourses}/>
     }
 }
 }

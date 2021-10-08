@@ -32,7 +32,7 @@ const SelfWork2 = (props) =>{
                             </ul>
                         </div>
                     <div className="test-lection-btn">
-                        <button>Продолжить</button>
+                    <button onClick={props.next}>Продолжить</button>
                     </div>
                 </div>
             </div>

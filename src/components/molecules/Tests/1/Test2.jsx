@@ -125,7 +125,7 @@ const Test1 = (props) => {
                             
                         </div>
                     <div className="test-lection-btn">
-                        <button>Продолжить</button>
+                        <button onClick={props.next}>Продолжить</button>
                     </div>
                 </div>
             </div>
