@@ -9,7 +9,7 @@ const Topic = (props) => {
             <h4 className="theme-name">{props.name}</h4>
             <p className="theme-p"><button  onClick={ props.lection}>Лекция</button></p>
             <p className="theme-p"><button  onClick={ props.selfWork}>Самостоятельная работа</button></p>
-            <p className="theme-p"><button style={{border: 'white', backgroundColor: 'white'}} onClick={ props.test}>Тест</button></p>
+            <p className="theme-p"><button  onClick={ props.test}>Тест</button></p>
         </div>
     );
 };
