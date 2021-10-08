@@ -1,8 +1,26 @@
 import React from 'react';
 
-const Lect1 = () => {
+const Lect1 = (props) => {
     return (
-        <div className="test-lection-content-text">
+        <div className="container-tl"> 
+        {/* Основной блок (тот, что с градиентной рамкой) */}
+            <div class='test-lection'>
+                {/* Номер теста */}
+                <p className='test-num'>Тест №1:</p>
+                {/* Блок теста: */}
+                <div className="test-lection-content">
+                    {/* Заголовок теста */}
+                    <h2 className="test-lection-content-title">{props.name}</h2>
+                    {/* Блок ссылок на части теста (лекция, сам тест и проч.) */}
+                    <div className="test-lection-content-page">
+                        {/* Неактивная ссылка */}
+                        <a href="#" className="page-a">Лекция</a>
+                        {/* Активные ссылки */}
+                        <a href="#" className="page-a">Самостоятельная работа</a>
+                        <a href="#" className="page-a">Тест</a>
+                    </div>
+                    {/* Общий блок текста лекции */}
+                    <div className="test-lection-content-text">
                         {/*  id={lection} */}
                             {/* Один абзац */}
                             <p>Бюджет — это форма образования и расходования фонда денежных средств, предназначенная для  финансирования задач и  функций местного самоуправления.
@@ -62,6 +80,27 @@ const Lect1 = () => {
                             </ul>
                             <p>Налогоплательщиками и плательщиками сборов признаются организации и физические лица, на которых в соответствии с НК РФ возложена обязанность уплачивать соответственно налоги и (или) сборы.</p>
                         </div>
+                        <div className="test-lection-btn">
+                            <button>Продолжить</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     );
 };
 

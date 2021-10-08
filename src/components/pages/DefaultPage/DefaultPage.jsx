@@ -126,13 +126,13 @@ const DefaultPage = (props) => {
         let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.lec))==true)
     if (needLec.length !== 0){
         if (needLec[0].lec === 'lection1'){
-            compon = <Lect1/>
+            compon = <Lect1 name={needLec[0].name} number={needLec[0].number}/>
         }
         else if (needLec[0].lec === 'lection2'){
-            compon = <Lect2/>
+            compon = <Lect2 name={needLec[0].name} number={needLec[0].number}/>
         }
         else if (needLec[0].lec === 'lection3'){
-            compon = <Lect3/>
+            compon = <Lect3 name={needLec[0].name} number={needLec[0].number}/>
         }
     }
 }
@@ -142,13 +142,13 @@ if (compon === null){
     let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.swork))==true)
 if (needLec.length !== 0){
     if (needLec[0].swork === 'selfWork1'){
-        compon = <SelfWork1/>
+        compon = <SelfWork1 name={needLec[0].name} number={needLec[0].number}/>
     }
     else if (needLec[0].swork === 'selfWork2'){
-        compon = <SelfWork2/>
+        compon = <SelfWork2 name={needLec[0].name} number={needLec[0].number}/>
     }
     else if (needLec[0].swork === 'selfWork3'){
-        compon = <SelfWork3/>
+        compon = <SelfWork3 name={needLec[0].name} number={needLec[0].number}/>
     }
 }
 }
@@ -158,13 +158,13 @@ if (compon === null){
     let needLec = TOPICS.filter((x) => JSON.parse(localStorage.getItem(x.ts))==true)
 if (needLec.length !== 0){
     if (needLec[0].ts === 'test1'){
-        compon = <Test1/>
+        compon = <Test1 name={needLec[0].name} number={needLec[0].number}/>
     }
     else if (needLec[0].ts === 'test2'){
-        compon = <Test2/>
+        compon = <Test2 name={needLec[0].name} number={needLec[0].number}/>
     }
     else if (needLec[0].ts === 'test3'){
-        compon = <Test3/>
+        compon = <Test3 name={needLec[0].name} number={needLec[0].number}/>
     }
 }
 }
