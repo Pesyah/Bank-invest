@@ -3,7 +3,7 @@
     height: 100px;
     display: flex;
     background: white;
-    background: linear-gradient(#3dc832, #fff000);
+    background: #3dc832;
     content: '';
 }
 #logo{
@@ -25,10 +25,10 @@
 }
 .logo-zag{
     font-weight: 300;
-    font-size: 17px;
-    color: black;
+    font-size: 18px;
     margin: 0px;
     display: inline-block;
+    color: white;
 }
 #header-navbar{
     flex: 5;
@@ -54,12 +54,17 @@
     float: left;
     background: transparent;
     cursor: pointer;
+    transition: 0.5s;
 }
 .navbar-btn:hover{
-    box-shadow: 0px -15px 40px 2px black;
+    background: #9ee318;
+}
+.navbar-btn:hover a{
+    border-bottom: 3px solid white;
 }
 .navbar-btn a{
-    color: black;
+    transition: 0.5s;
+    color: white;
     text-decoration: none;
     justify-content: center;
     align-items: center;
@@ -67,6 +72,7 @@
     font-family: system-ui;
     font-weight: 500;
     font-size: 20px;
+    border-bottom: 3px solid transparent;
 }
 .navbar-btn:hover .navbar-btn a{
     border-bottom: 3px solid black;
@@ -82,16 +88,22 @@
     text-align: center;
     border: 0px;
     cursor: pointer;
+    transition: 0.5s;
+}
+#account a{
     text-transform: uppercase;
     font-family: system-ui;
     font-weight: 500;
     font-size: 24px;
+    transition: 0.5s;
+    color: white;
+    text-decoration: none;
 }
-#account:hover {
-    border: 2px solid green
+#account:hover{
+    background: #9ee318;
 }
-#account:active {
-    box-shadow: 10px 10px 10px 10px black;
+#account:hover a{
+    border-bottom: white;
 }
 .account-enter{
     color: black;
