@@ -31,7 +31,7 @@ function App() {
       if(i.login===login&&i.password===password){
         setAuth(false)
         setBtnName('Выйти')
-        localStorage.setItem('Auth', JSON.stringify(isAuth))
+        localStorage.setItem('Auth', JSON.stringify('false'))
       }
     }
   }
