@@ -18,7 +18,6 @@ function App() {
 
   function registration(){
     setAuth(true)
-    setBtnName('Войти')
     localStorage.setItem('Auth', JSON.stringify('true'))
   }
 
