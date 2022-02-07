@@ -26,7 +26,6 @@ function App() {
     for(let i of arrUsers){
       if(i.login===login&&i.password===password){
         setAuth(false)
-        setBtnName('Выйти')
         localStorage.setItem('Auth', JSON.stringify(false))
       }
     }
