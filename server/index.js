@@ -7,7 +7,6 @@ const PORT = config.get('serverPort')
 
 app.use(express.json())
 app.use("/api/auth", authRouter)
-app.listen(5000)
 
 
 const start = async () => {
