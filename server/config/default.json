@@ -1,4 +1,4 @@
 {
   "serverPort" : 5000,
-  "dbUrl": "mongodb+srv:/Pesyah:artur123@cloud.10mao.mongodb.net/cloud?retryWrites=true&w=majority"
+  "dbUrl": "mongodb+srv://Pesyah:artur123@cloud.10mao.mongodb.net/cloud?retryWrites=true&w=majority"
 }
