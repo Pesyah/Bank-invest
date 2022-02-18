@@ -18,3 +18,36 @@
     width: 400px;
     
 }
+
+.course-1 {
+    z-index:2;
+    position: relative;
+    left:40px;
+}
+
+.course-2 {
+    position:relative;
+    display:flex;
+    top:-60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 230px; 
+}
+
+.course-3 {
+    position: relative;
+    top:-95px; 
+    left: 90px;
+}
+
+.course-4 {
+font-size: 20px; 
+z-index:2; 
+top: -90px;
+border-radius: 8px; 
+position: relative;
+display: flex;
+margin-left: auto; 
+margin-right: auto; 
+background: linear-gradient(#3dc832, #fff000);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Header.css"
 
-const head = (props) => {
+const Head = (props) => {
     return (
         <header id="header">
             <div id="logo">
@@ -9,15 +9,15 @@ const head = (props) => {
                 <h3 class="logo-zag">Интернет-портал<br/>«Предпринимательский<br/>всеобуч»</h3>
             </div>
             <nav id="header-navbar">
-                <button className="navbar-btn"><a>О проекте</a></button>
+                <button className="navbar-btn" onClick={props.about}><a>О проекте</a></button>
                 <button className="navbar-btn" onClick={props.shop}><a>Магазин</a></button>
                 <button className="navbar-btn" onClick={props.courses}><a>Курс "Налоги"</a></button>
 </nav>
-<button id="account" onClick={props.onClick}><a href="#">
+<button id="account" onClick={props.onClick}><a href="">
    {props.name}
 </a></button>
 </header>
     );
 };
 
-export default head;
+export default Head;

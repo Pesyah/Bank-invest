@@ -1,16 +1,16 @@
 import React from 'react';
 
-const SelfWork1 = (props) => {
+const Self1 = (props) => {
     return (
         <div className="container-tl"> 
         {/* Основной блок (тот, что с градиентной рамкой) */}
             <div class='test-lection'>
                 {/* Номер теста */}
-                <p className='test-num'>Тест №{props.number}:</p>
+                <p className='test-num'>Тест №1:</p>
                 {/* Блок теста: */}
                 <div className="test-lection-content">
                     {/* Заголовок теста */}
-                    <h2 className="test-lection-content-title">{props.name}</h2>
+                    <h2 className="test-lection-content-title">Бюджет и налоговая система РФ</h2>
                     {/* Блок ссылок на части теста (лекция, сам тест и проч.) */}
                     <div className="test-lection-content-page">
                         {/* Неактивная ссылка */}
@@ -56,4 +56,4 @@ const SelfWork1 = (props) => {
     );
 };
 
-export default SelfWork1;
+export default Self1;

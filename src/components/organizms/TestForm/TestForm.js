@@ -8,7 +8,9 @@ const TestForm = () => {
     const [test, setTest] = useState('dis-none')
     function next(){
         setTestPage(testPage + 1)
+        localStorage.setItem('money',"6")
         console.log(testPage)
+
     }
     useEffect(() => {
         if (testPage == 1){

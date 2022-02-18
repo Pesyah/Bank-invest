@@ -2,7 +2,7 @@
   "name": "helpp",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "http://.",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -37,5 +37,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegSkachko/Center-invest_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlegSkachko/Center-invest_app/issues"
+  },
+  "description": ""
 }

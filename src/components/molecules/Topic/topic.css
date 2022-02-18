@@ -6,7 +6,6 @@
     padding: 75px 0;
 }
 
-
 .test-block::after{
     position: absolute;
     top: -5px;

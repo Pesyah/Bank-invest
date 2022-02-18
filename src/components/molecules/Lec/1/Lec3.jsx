@@ -6,11 +6,11 @@ const Lect3 = (props) => {
         {/* Основной блок (тот, что с градиентной рамкой) */}
             <div class='test-lection'>
                 {/* Номер теста */}
-                <p className='test-num'>Тест №{props.number}:</p>
+                <p className='test-num'>Тест №3:</p>
                 {/* Блок теста: */}
                 <div className="test-lection-content">
                     {/* Заголовок теста */}
-                    <h2 className="test-lection-content-title">{props.name}</h2>
+                    <h2 className="test-lection-content-title">Налоговый контроль в РФ</h2>
                     {/* Блок ссылок на части теста (лекция, сам тест и проч.) */}
                     <div className="test-lection-content-page">
                         {/* Неактивная ссылка */}

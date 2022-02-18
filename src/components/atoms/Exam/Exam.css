@@ -2,9 +2,6 @@
     background-color: #fff000;
     border-radius: 12px;
     padding: 20px;
-}
-
-.lesson-block{
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
@@ -14,13 +11,9 @@
     padding: 17px;
     margin-right: 20px;
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-.exam-block-a{
-    text-decoration: none;
-    color: black;
-    font-size: 32px;
-}
-#exam-block:hover .exam-block-a{
+#exam-block:hover {
     color: #3dc832;
 }

@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import Head from '../../molecules/head/Head.jsx';
 import myBusiness from './../../../img/myBusiness.gif'
 import diamond from './../../../img/diamond.gif'
 import ModalWindow from '../../molecules/ModalWndow/ModalWindow.jsx';
+import coin from './../../../img/coin.gif'
+import Moneta from '../../molecules/Moneta/Moneta.jsx';
+import Pig from '../../molecules/Pig/Pig.jsx';
 
 const Shop = (props) => {
     const [isByBusiness, setIsByBusiness] = useState(JSON.parse(localStorage.getItem('isByBusiness')) ||false)
     const [isbuyAlmaz, setIsbuyAlmaz] = useState(JSON.parse(localStorage.getItem('isbuyAlmaz')) ||false)
     const [ModalActiv, setModalActiv] =useState(false)
     const [money, setMoney] = useState( JSON.parse(localStorage.getItem('money')) ||0)
-
+    const [ModalActive, setModalActive] =useState(false)
   
+    const [moneta, setMoneta] =useState(false)
+
     function buyBusiness() {
        if(money>=10){
         setIsByBusiness(true)
@@ -20,7 +24,17 @@ const Shop = (props) => {
        }
       
     }
+
+    function isCopilka() {
+        setMoneta(true)
+        setTimeout(()=> {
+            setMoney(money+1)
+            setMoneta(false)
+        }, 1000)
+    }
+
     function buyAlmaz() {
+        isCopilka()
         if(money>=5){
             setIsByBusiness(false)
             setIsbuyAlmaz(true)
@@ -64,28 +78,37 @@ const Shop = (props) => {
     return (
         <div>
            {mod()}
-           <Head 
-            name = {props.name} courses = {props.courses}
-           
-           
-           name = 'Выйти' onClick={props.onClick}/>
+            <div className="count">
+                <p className="count-p"><div className="money"></div><span>количество монет {money}</span></p>
+                <button onClick={()=> setModalActive(true)}>ok</button>
+            </div>
+            <ModalWindow 
+      title='Поздравляем!'
+      subtitle='Вы заработали +1 монетку'
+      src={coin}
+      btnName='получить монетку'
+      money = {money} 
+      onClick1={()=>{setModalActive(false);setMoney(money+1); localStorage.setItem('money', money+1)}} 
+      active = {ModalActive} onClick={()=>setModalActive(false)}/>
+     
             <div className="shop">
                 <div >
                     <div className='modal__content' onClick={e=>e.stopPropagation()}>
-                    <div style={{position:'relative', left:'10px'}}><h1>Курс "Малый бизнес"</h1></div>
-                    <div style={{zIndex:2, position:'relative', left:'40px'}}><h2>Курс стоит 10 монеток</h2></div>
-                    <img style={{position:'relative', display:'flex', top:'-60px', marginLeft: 'auto', marginRight: 'auto',width:'230px', height:'230px'}} src={myBusiness}></img>
-                    <div style={{position:'relative',top:'-95px', left:'90px'}}><h3>На вашем счету: {props.money}</h3></div>
-                    <button style={{fontSize: '20px', zIndex:2, top:'-90px', borderRadius:'8px', position:'relative', display:'flex', marginLeft: 'auto', marginRight: 'auto', background: 'linear-gradient(#3dc832, #fff000)'}} onClick={buyBusiness}>купить</button>
+                    <div ><h1>Курс "Малый бизнес"</h1></div>
+                    <div className='course-1' ><h2>Курс стоит 10 монеток</h2></div>
+                    <img style={{width:'150px'}} src={myBusiness}></img>
+                    <div className='course-3'><h3>На вашем счету: {props.money}</h3></div>
+                    <button className='course-4' onClick={buyBusiness}>купить</button>
                 </div>
                 <div style={{ margin: '20px'}}>
                     <div className='modal__content' onClick={e=>e.stopPropagation()}>
-                    <div style={{position:'relative', left:'125px'}}><h1>Алмаз</h1></div>
-                    <div style={{zIndex:2, position:'relative', left:'40px'}}><h2>Алмаз стоит 5 монеток</h2></div>
-                    <img style={{position:'relative', display:'flex', top:'-30px', marginLeft: 'auto', marginRight: 'auto',width:'300px', height:'230px'}} src={diamond}></img>
-                    <div style={{position:'relative',top:'-95px', left:'90px'}}><h3>На вашем счету: {props.money}</h3></div>
-                    <button style={{fontSize: '20px', zIndex:2, top:'-90px', borderRadius:'8px', position:'relative', display:'flex', marginLeft: 'auto', marginRight: 'auto', background: 'linear-gradient(#3dc832, #fff000)'}} onClick={buyAlmaz}>купить</button>
+                    <div className='course-1'><h1>Алмаз</h1></div>
+                    <div ><h2>Алмаз стоит 5 монеток</h2></div>
+                    <img style={{width:'150px'}} src={diamond}></img>
+                    <div className='course-3'><h3>На вашем счету: {props.money}</h3></div>
+                    <button  onClick={buyAlmaz}>купить</button>
                 </div>
+                {moneta && <><Moneta/> <Pig/></>}
             </div>    
             </div>
             </div>

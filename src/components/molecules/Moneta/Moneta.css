@@ -1,0 +1,14 @@
+.moneta { 
+    position: relative;
+    animation: mon 1s infinite linear;
+}
+
+
+@keyframes mon {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(120px, 100px);
+    }
+}
