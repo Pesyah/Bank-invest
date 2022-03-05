@@ -57,7 +57,7 @@ const Course = (props) => {
             subtitle='Вы заработали +1 монетку'
             src={coin}
             btnName='получить монетку'
-            money = {money} 
+            money = {JSON.parse(localStorage.getItem('money')) || 0} 
             onClick1={()=>{setModalActive(false);setMoney(money+1); localStorage.setItem('money', money+1);props.goBack()}} 
             active = {ModalActive} onClick={()=>setModalActive(false)}/>
         {where()}
