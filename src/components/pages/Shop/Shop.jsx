@@ -78,10 +78,6 @@ const Shop = (props) => {
     return (
         <div>
            {mod()}
-            <div className="count">
-                <p className="count-p"><div className="money"></div><span>количество монет {money}</span></p>
-                <button onClick={()=> setModalActive(true)}>ok</button>
-            </div>
             <ModalWindow 
       title='Поздравляем!'
       subtitle='Вы заработали +1 монетку'

@@ -23,7 +23,7 @@ const Test1 = (props) => {
                     <div className="test-lection-content-text">
                         {/* id={test} */}
                             <div className="test-lection-block">
-                                <p className="test-lection-block-p">Как называются налоги и сборы, устанавливаемые НК и обязательные к уплате на всей территории РФ?</p>
+                                <p className="test-lection-block-p test-lection-answers">Как называются налоги и сборы, устанавливаемые НК и обязательные к уплате на всей территории РФ?</p>
                                 {/* Тест */}
                                 <ul className="test-lection-answers" radio>
                                     <li>
@@ -148,7 +148,7 @@ const Test1 = (props) => {
                                 <p className="answers-num">Выберите один ответ</p>
                             </div>
                         </div>
-                    <div className="test-lection-btn">
+                    <div className="test-lection-btn" onClick={props.goBack}>
                         <button onClick={props.next}>Продолжить</button>
                     </div>
                 </div>

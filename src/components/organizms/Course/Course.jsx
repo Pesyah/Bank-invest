@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ModalWindow from '../../molecules/ModalWndow/ModalWindow.jsx';
+import coin from './../../../img/coin.gif'
 import Lec1 from '../../molecules/Lec/1/Lec1.jsx'
 import Lec2 from '../../molecules/Lec/1/Lec2.jsx'
 import Lec3 from '../../molecules/Lec/1/Lec3.jsx'
@@ -13,6 +15,9 @@ import Test3 from '../../molecules/Tests/1/Test3.jsx'
 const Course = (props) => {
 
     const [here, setHere] = useState(sessionStorage.getItem('here'))
+    const [ModalActiv, setModalActiv] =useState(false)
+    const [money, setMoney] = useState( JSON.parse(localStorage.getItem('money')) ||0)
+    const [ModalActive, setModalActive] =useState(false)
 
     function where() {
         if (here == 'lec1'){
@@ -34,19 +39,29 @@ const Course = (props) => {
             return <Self3 next={ () => setHere('test3')}></Self3>
         }
         else if (here == 'test1'){
-            return <Test1></Test1>
+            return <Test1 next={()=> setModalActive(true)}></Test1>
         }
         else if (here == 'test2'){
-            return <Test2></Test2>
+            return <Test2 next={()=> {setModalActive(true)}}></Test2>
         }
         else if (here == 'test3'){
-            return <Test3></Test3>
+            return <Test3 next={()=> setModalActive(true)}></Test3>
         }
     }
 
 
     return (
-        <>{where()}</>
+        <>
+        <ModalWindow 
+            title='Поздравляем!'
+            subtitle='Вы заработали +1 монетку'
+            src={coin}
+            btnName='получить монетку'
+            money = {money} 
+            onClick1={()=>{setModalActive(false);setMoney(money+1); localStorage.setItem('money', money+1);props.goBack()}} 
+            active = {ModalActive} onClick={()=>setModalActive(false)}/>
+        {where()}
+        </>
     );
 };
 

@@ -9,6 +9,8 @@ import Course from '../../organizms/Course/Course.jsx'
 
 const DefaultPage = (props) => {
 
+    const [money, setMoney] = useState(JSON.parse(localStorage.getItem('money')) || 0)
+
     const [page, setPage] = useState(false)
 
     function view() {
@@ -17,7 +19,7 @@ const DefaultPage = (props) => {
         } else if(page == '2') {
             return <><Courses onClick={() => setPage(3)}></Courses></>
         } else if (page == '3'){
-            return <Course next={() => setPage(3)}></Course>
+            return <Course goBack={() => setPage(2)} next={() => setPage(3)}></Course>
         }
         else if (!page) {
             return <h1>О проекте</h1>
@@ -33,6 +35,9 @@ const DefaultPage = (props) => {
                 courses = {() => setPage(2)}
                 about = {() => setPage(false)}
             />
+            <div className="count">
+                <p className="count-p"><div className="money"></div><span>количество монет {JSON.parse(localStorage.getItem('money')) || 0}</span></p>
+            </div>
             {view()}
             <Footer/>
         </>
