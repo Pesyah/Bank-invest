@@ -8,9 +8,6 @@ const Lect1 = (props) => {
                 <div className="test-lection-content">
                     <h2 className="test-lection-content-title">Бюджет и налоговая система РФ</h2>
                     <div className="test-lection-content-page">
-                        <a href="#" className="page-a">Лекция</a>
-                        <a href="#" className="page-a">Самостоятельная работа</a>
-                        <a href="#" className="page-a">Тест</a>
                     </div>
                     <div className="test-lection-content-text">
                             <p>Бюджет — это форма образования и расходования фонда денежных средств, предназначенная для  финансирования задач и  функций местного самоуправления.
@@ -69,7 +66,7 @@ const Lect1 = (props) => {
                             <p>Налогоплательщиками и плательщиками сборов признаются организации и физические лица, на которых в соответствии с НК РФ возложена обязанность уплачивать соответственно налоги и (или) сборы.</p>
                         </div>
                         <div className="test-lection-btn">
-                            <button onClick={props.next}>Продолжить</button>
+                            <button onClick={() => {props.next(); window.scroll(0,0)}}>Продолжить</button>
                         </div>
                 </div>
             </div>

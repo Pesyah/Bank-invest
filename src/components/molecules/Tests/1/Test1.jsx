@@ -14,10 +14,6 @@ const Test1 = (props) => {
                     {/* Блок ссылок на части теста (лекция, сам тест и проч.) */}
                     <div className="test-lection-content-page">
                         {/* Неактивная ссылка */}
-                        <a href="#" className="page-a">Лекция</a>
-                        {/* Активные ссылки */}
-                        <a href="#" className="page-a">Самостоятельная работа</a>
-                        <a href="#" className="page-a">Тест</a>
                     </div>
                     {/* Общий блок текста лекции */}
                     <div className="test-lection-content-text">
@@ -148,8 +144,8 @@ const Test1 = (props) => {
                                 <p className="answers-num">Выберите один ответ</p>
                             </div>
                         </div>
-                    <div className="test-lection-btn" onClick={props.goBack}>
-                        <button onClick={props.next}>Продолжить</button>
+                    <div className="test-lection-btn">
+                        <button onClick={() => {props.next(); window.scroll(0,0)}}>Продолжить</button>
                     </div>
                 </div>
             </div>

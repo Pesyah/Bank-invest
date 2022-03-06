@@ -8,9 +8,6 @@ const Lect2 = (props) => {
                 <div className="test-lection-content">
                     <h2 className="test-lection-content-title">Права и обязанности налогоплательщиков</h2>
                     <div className="test-lection-content-page">
-                        <a href="#" className="page-a">Лекция</a>
-                        <a href="#" className="page-a">Самостоятельная работа</a>
-                        <a href="#" className="page-a">Тест</a>
                     </div>
                     {/* Общий блок текста лекции */}
                     <div className="test-lection-content-text">
@@ -106,7 +103,7 @@ const Lect2 = (props) => {
                             <p>В случае неуплаты налогов в установленный срок налоговые органы запускают механизм взыскания выявленной задолженности.</p>                     
                         </div>
                         <div className="test-lection-btn">
-                        <button onClick={props.next}>Продолжить</button>
+                        <button onClick={() => {props.next(); window.scroll(0,0)}}>Продолжить</button>
                         </div>
                 </div>
             </div>
