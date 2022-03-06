@@ -12,11 +12,11 @@ const DefaultPage = (props) => {
     const [page, setPage] = useState(false)
 
     function view() {
-        if(page === '1') {
+        if(page == '1') {
             return <Shop/>
-        } else if(page === '2') {
+        } else if(page == '2') {
             return <><Courses onClick={() => setPage(3)}></Courses></>
-        } else if (page === '3'){
+        } else if (page == '3'){
             return <Course goBack={() => setPage(2)} next={() => setPage(3)}></Course>
         }
         else if (!page) {
