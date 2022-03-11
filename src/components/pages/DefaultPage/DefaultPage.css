@@ -4,6 +4,8 @@
 }
 .content-content{
     padding: 75px 0;
+    display: flex;
+    justify-content: center;
 }
 #exam-block{
     background-color: #fff000;
@@ -31,13 +33,6 @@
     content: '';
     z-index: -1;
     border-radius: 12px;
-}
-.test-block{
-    position: relative;
-    border: 5px solid transparent;
-    border-radius: 12px;
-    background-color: white;
-    background-clip: padding-box;
 }
 .exam-block-a{
     text-decoration: none;

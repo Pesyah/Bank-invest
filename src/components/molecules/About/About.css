@@ -1,0 +1,8 @@
+#about_us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about_us img{
+    height: 75vh;
+}

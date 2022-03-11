@@ -13,9 +13,9 @@ const Head = (props) => {
                 <button className="navbar-btn" onClick={props.shop}><a>Магазин</a></button>
                 <button className="navbar-btn" onClick={props.courses}><a>Курс "Налоги"</a></button>
 </nav>
-<button id="account" onClick={props.onClick}><a href="">
-   {props.name}
-</a></button>
+<button id="account" onClick={props.onClick}><div id="a">
+   {props.username}
+</div></button>
 </header>
     );
 };

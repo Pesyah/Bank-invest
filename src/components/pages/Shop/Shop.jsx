@@ -34,7 +34,6 @@ const Shop = (props) => {
     }
 
     function buyAlmaz() {
-        isCopilka()
         if(money>=5){
             setIsByBusiness(false)
             setIsbuyAlmaz(true)
@@ -93,16 +92,26 @@ const Shop = (props) => {
                     <div ><h1>Курс "Малый бизнес"</h1></div>
                     <div className='course-1' ><h2>Курс стоит 10 монеток</h2></div>
                     <img style={{width:'150px'}} src={myBusiness}></img>
-                    <div className='course-3'><h3>На вашем счету: {props.money}</h3></div>
-                    <button className='course-4' onClick={buyBusiness}>купить</button>
+                    <div className='course-3'><h3>На вашем счету: {JSON.parse(localStorage.getItem('money'))}</h3></div>
+                    <button style={{display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    height: '30px',
+                                    width: '100px',
+                                    fontSize: '20px'}} onClick={buyBusiness}>купить</button>
                 </div>
                 <div style={{ margin: '20px'}}>
                     <div className='modal__content' onClick={e=>e.stopPropagation()}>
                     <div className='course-1'><h1>Алмаз</h1></div>
                     <div ><h2>Алмаз стоит 5 монеток</h2></div>
                     <img style={{width:'150px'}} src={diamond}></img>
-                    <div className='course-3'><h3>На вашем счету: {props.money}</h3></div>
-                    <button  onClick={buyAlmaz}>купить</button>
+                    <div className='course-3'><h3>На вашем счету: {JSON.parse(localStorage.getItem('money'))}</h3></div>
+                    <button style={{display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    height: '30px',
+                                    width: '100px',
+                                    fontSize: '20px'}} onClick={buyAlmaz}>купить</button>
                 </div>
                 {moneta && <><Moneta/> <Pig/></>}
             </div>    

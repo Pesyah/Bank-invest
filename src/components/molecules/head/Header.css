@@ -91,7 +91,7 @@
     cursor: pointer;
     transition: 0.5s;
 }
-#account a{
+#a{
     text-transform: uppercase;
     font-family: system-ui;
     font-weight: 500;
@@ -103,7 +103,7 @@
 #account:hover{
     background: #9ee318;
 }
-#account:hover a{
+#a:hover{
     border-bottom: white;
 }
 .account-enter{

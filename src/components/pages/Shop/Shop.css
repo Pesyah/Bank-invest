@@ -51,3 +51,16 @@ margin-left: auto;
 margin-right: auto; 
 background: linear-gradient(#3dc832, #fff000);
 }
+
+.buyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 100px;
+    font-size: 20px;
+}
+footer {
+    position: fixed;
+    margin-top: 500px;
+}

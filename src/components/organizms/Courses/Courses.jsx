@@ -15,7 +15,6 @@ const Courses = (props) => {
         <div className="container">
             <div className="content-content">
                 <div>
-                <Exam/>
                 { TOPICS.map((topic) => {
                 return(
                     <Topic 

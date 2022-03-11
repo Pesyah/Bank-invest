@@ -5,6 +5,7 @@ import './DefaultPage.css'
 import Shop from '../Shop/Shop.jsx';
 import Courses from '../../organizms/Courses/Courses.jsx'
 import Course from '../../organizms/Course/Course.jsx'
+import About from '../../molecules/About/About.jsx'
 
 
 const DefaultPage = (props) => {
@@ -20,21 +21,20 @@ const DefaultPage = (props) => {
             return <Course goBack={() => setPage(2)} next={() => setPage(3)}></Course>
         }
         else if (!page) {
-            return <h1>О проекте</h1>
+            return <About></About>
         }
     }
-    console.log(page)
     return (
         <>
             <Head
-                name = {props.name}
+                username = {props.username}
                 onClick={props.onClick}
                 shop = {() => setPage(1)}
                 courses = {() => setPage(2)}
                 about = {() => setPage(false)}
             />
             <div className="count">
-                <p className="count-p"><div className="money"></div><span>количество монет {JSON.parse(localStorage.getItem('money')) || 0}</span></p>
+                <p className="count-p"><div className="money"></div><span>На вашем счету {JSON.parse(localStorage.getItem('money')) || 0} монет</span></p>
             </div>
             {view()}
             <Footer/>

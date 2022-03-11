@@ -5,6 +5,7 @@ import DefaultPage from './components/pages/DefaultPage/DefaultPage.jsx';
 import users from './Data/Users/Users';
 
 function App() {
+  const [username, setUsername] = useState(localStorage.getItem('user'))
   const [isAuth, setAuth] = useState(JSON.parse(localStorage.getItem('Auth')) ? true : false)
   const [btnName, setBtnName] = useState('Выйти')
   const [login, setLogin] =useState('')
@@ -22,15 +23,17 @@ function App() {
       if(i.login===login&&i.password===password){
         setAuth(true)
         setBtnName('Выйти')
+        setUsername(i.username)
+        localStorage.setItem('user', i.username)
         localStorage.setItem('Auth', JSON.stringify(true))
       }
     }
   }
-  console.log(isAuth)
   return (
     isAuth ? 
     <>
     <DefaultPage 
+    username = {username}
     name = {btnName}
     onClick={registration}/>
     </>
