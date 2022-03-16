@@ -2,8 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css'
+import {store} from "./reducers";
+import {Provider} from "react-redux";
+
 
 ReactDOM.render(
-    <App />,
+  <React.StrictMode>
+  <Provider store={store}>
+    <App />
+  </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );

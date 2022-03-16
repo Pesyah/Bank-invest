@@ -7,10 +7,7 @@ import Lec3 from '../../molecules/Lec/1/Lec3.jsx'
 import Self1 from '../../molecules/Self/1/SelfWork1.jsx'
 import Self2 from '../../molecules/Self/1/SelfWork2.jsx'
 import Self3 from '../../molecules/Self/1/SelfWork3.jsx'
-import Test1 from '../../molecules/Tests/1/Test1.jsx'
-import Test2 from '../../molecules/Tests/1/Test2.jsx'
-import Test3 from '../../molecules/Tests/1/Test3.jsx'
-
+import Test from '../../molecules/Tests/1/Test.jsx'
 
 const Course = (props) => {
 
@@ -38,27 +35,19 @@ const Course = (props) => {
             return <Self3 next={ () => setHere('test3')}></Self3>
         }
         else if (here === 'test1'){
-            return <Test1 next={()=> setModalActive(true)}></Test1>
+            return <Test src="https://onlinetestpad.com/ru/test/316030-trudovye-pravootnosheniya-9-klass" next={() => props.goBack()}></Test>
         }
         else if (here === 'test2'){
-            return <Test2 next={()=> setModalActive(true)}></Test2>
+            return <Test src="https://onlinetestpad.com/ru/test/316030-trudovye-pravootnosheniya-9-klass" next={() => props.goBack()}></Test>
         }
         else if (here === 'test3'){
-            return <Test3 next={()=> setModalActive(true)}></Test3>
+            return <Test src="https://onlinetestpad.com/ru/test/316030-trudovye-pravootnosheniya-9-klass" next={() => props.goBack()}></Test>
         }
     }
 
 
     return (
         <>
-        <ModalWindow 
-            title='Поздравляем!'
-            subtitle='Вы заработали +1 монетку'
-            src={coin}
-            btnName='получить монетку'
-            money = {JSON.parse(localStorage.getItem('money')) || 0} 
-            onClick1={()=>{setModalActive(false);setMoney(money+1); localStorage.setItem('money', money+1);setTimeout(() => {props.goBack()}, 100)}} 
-            active = {ModalActive} onClick={()=>setModalActive(false)}/>
         {where()}
         </>
     );

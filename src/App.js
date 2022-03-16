@@ -1,48 +1,26 @@
-
-import { useState } from 'react';
 import RegForm from './components/organizms//RegForm/RegForm'
 import DefaultPage from './components/pages/DefaultPage/DefaultPage.jsx';
-import users from './Data/Users/Users';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { auth } from './actions/user';
 
 function App() {
-  const [username, setUsername] = useState(localStorage.getItem('user'))
-  const [isAuth, setAuth] = useState(JSON.parse(localStorage.getItem('Auth')) ? true : false)
-  const [btnName, setBtnName] = useState('Выйти')
-  const [login, setLogin] =useState('')
-  const [password, setPassword] =useState('')
 
-  function registration(){
-    setAuth(false)
-    setBtnName('Выйти')
-    localStorage.setItem('Auth', JSON.stringify(false))
-   
-  }
-
-  function submit(){
-    for(let i of users){
-      if(i.login===login&&i.password===password){
-        setAuth(true)
-        setBtnName('Выйти')
-        setUsername(i.username)
-        localStorage.setItem('user', i.username)
-        localStorage.setItem('Auth', JSON.stringify(true))
-      }
+  const isAuth = useSelector(state => state.user.isAuth)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (localStorage.getItem('token') != null) {
+      dispatch(auth())
     }
-  }
+  }, [])
+
   return (
     isAuth ? 
     <>
-    <DefaultPage 
-    username = {username}
-    name = {btnName}
-    onClick={registration}/>
+    <DefaultPage/>
     </>
     :
-      <RegForm 
-      login={(e)=> setLogin(e.target.value)}
-      password={(e)=> setPassword(e.target.value)}
-      name='отправить' 
-      onClick={submit}/> 
+      <RegForm/> 
   );
 }
 

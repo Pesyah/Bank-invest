@@ -39,3 +39,23 @@ body{
     border-radius: 15px;
     color: white;
 }
+
+#admin-panel{
+    margin-top: 79.59px;
+    padding-top: 30px;
+}
+#admin-panel .row{
+    border: 3px solid #e4003a;
+    padding: 25px 50px;
+}
+.admin-panel-zag{
+    font-family: 'Montserrat-ExtraBold';
+    color: #e4003a;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+#admin-panel button{
+    width: auto;
+}

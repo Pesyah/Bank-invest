@@ -5,8 +5,11 @@ import ModalWindow from '../../molecules/ModalWndow/ModalWindow.jsx';
 import coin from './../../../img/coin.gif'
 import Moneta from '../../molecules/Moneta/Moneta.jsx';
 import Pig from '../../molecules/Pig/Pig.jsx';
+import { useDispatch } from 'react-redux';
+import { addMoney } from '../../../actions/user';
 
 const Shop = (props) => {
+    const dispatch = useDispatch()
     const [isByBusiness, setIsByBusiness] = useState(JSON.parse(localStorage.getItem('isByBusiness')) ||false)
     const [isbuyAlmaz, setIsbuyAlmaz] = useState(JSON.parse(localStorage.getItem('isbuyAlmaz')) ||false)
     const [ModalActiv, setModalActiv] =useState(false)
@@ -23,14 +26,6 @@ const Shop = (props) => {
         localStorage.setItem('money', money-10)
        }
       
-    }
-
-    function isCopilka() {
-        setMoneta(true)
-        setTimeout(()=> {
-            setMoney(money+1)
-            setMoneta(false)
-        }, 1000)
     }
 
     function buyAlmaz() {
@@ -52,7 +47,7 @@ const Shop = (props) => {
              src={myBusiness}
              btnName='получить курс'
              money = {money} 
-             onClick1={()=>{setModalActiv(false);setMoney(money-10); localStorage.setItem('money', money-10)}} 
+             onClick1={()=>{setModalActiv(false);setMoney(money-10); localStorage.setItem('money', money-10); dispatch(addMoney(localStorage.getItem('mymail'), -10))}} 
              active = {ModalActiv} onClick={()=>setModalActiv(false)}/>
             )
          
@@ -64,7 +59,7 @@ const Shop = (props) => {
          src={diamond}
          btnName='получить алмаз'
          money = {money} 
-         onClick1={()=>{setModalActiv(false);setMoney(money-5); localStorage.setItem('money', money-5)}} 
+         onClick1={()=>{setModalActiv(false);setMoney(money-5); localStorage.setItem('money', money-5); dispatch(addMoney(localStorage.getItem('mymail'), -5))}} 
          active = {ModalActiv} onClick={()=>setModalActiv(false)}/>)
          }
     }
@@ -77,15 +72,6 @@ const Shop = (props) => {
     return (
         <div>
            {mod()}
-            <ModalWindow 
-      title='Поздравляем!'
-      subtitle='Вы заработали +1 монетку'
-      src={coin}
-      btnName='получить монетку'
-      money = {money} 
-      onClick1={()=>{setModalActive(false);setMoney(money+1); localStorage.setItem('money', money+1)}} 
-      active = {ModalActive} onClick={()=>setModalActive(false)}/>
-     
             <div className="shop">
                 <div >
                     <div className='modal__content' onClick={e=>e.stopPropagation()}>

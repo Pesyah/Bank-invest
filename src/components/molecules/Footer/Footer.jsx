@@ -1,10 +1,10 @@
 import React from 'react';
 import './footer.css'
 
-const footer = () => {
+const footer = (props) => {
     return (
             <div className='footer'>
-                <div>Ступени успеха</div>
+                <div onClick={props.onClick}>Ступени успеха</div>
             </div> 
     );
 };
