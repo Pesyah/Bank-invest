@@ -1,5 +1,5 @@
 {
   "serverPort" : 5000,
-  "dbUrl": "mongodb+srv://Admin:hardpassword@hakaton.10mao.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "dbUrl": "mongodb+srv://qwerty:123123123@cluster0.6pzkl.mongodb.net/test?retryWrites=true&w=majority",
   "secretKey": "secretKey"
 }
